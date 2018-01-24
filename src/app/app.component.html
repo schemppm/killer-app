@@ -1,17 +1,23 @@
-<h1>{{ title }}</h1>
-<h3>Choose your favourite killer and let him kill you :)</h3>
-<p>
-    <button (click)="freddyButtonClick()">To Freddy</button>
-    <button (click)="jasonButtonClick()">To Jason</button>
-    <button (click)="michaelButtonClick()">To Michael</button>
-    <button (click)="chuckyButtonClick()">To Chucky</button>
-</p>
-<p>Your current killer is: {{ killer }}</p>
-<p><button (click)="buttonClick()">{{ killButtonText }}</button></p>
-<div *ngIf="killed">
-    <p>You have been killed by {{ killer }}</p>
-    <img *ngIf="killer == 'Jason Vorhees'" src="http://www.factfiend.com/wp-content/uploads/2014/10/friday-the-13th-NY-through-the-window.jpg" width="300">
-    <img *ngIf="killer == 'Freddy Krueger'" src="https://hiddenremote.com/wp-content/blogs.dir/277/files/2013/09/freddy-new-awesome.jpg" width="300">
-    <img *ngIf="killer == 'Michael Myers'" src="http://i.dailymail.co.uk/i/pix/2013/01/25/article-0-17291475000005DC-944_634x404.jpg" width="300">
-    <img *ngIf="killer == 'Chucky'" src="https://images.moviepilot.com/images/c_limit,q_auto:good,w_600/image-3-killer-dolls-the-best-kills-of-chucky-and-tiffany-bfd0e210-f81d-4410-ae2c-537b09403093-jpeg-69449/killer-dolls-the-best-kills-of-chucky-and-tiffany.jpg" width="300">
+<div class="killerApp">
+    <h1>{{ title }}</h1>
+    <img src="http://www.summercampculture.com/wp-content/uploads/2013/10/campcrystallakeengagementphotos.jpg" width="200">
+    <h3>Choose your favourite killer and let him kill you :)</h3>
+    <p>
+        <button class="freddyButton" (click)="killerButtonClick('Freddy Krueger')">To Freddy</button>
+        <button (click)="killerButtonClick('Jason Vorhees')">To Jason</button>
+        <button (click)="killerButtonClick('Michael Myers')">To Michael</button>
+        <button (click)="killerButtonClick('Chucky')">To Chucky</button>
+        <button (click)="killerButtonClick('Disney Princess')">To Disney Princess</button>
+    </p>
+    <p class="currentKillerText">Your current killer is: {{ killer }}</p>
+    <p><button (click)="buttonClick()">{{ killButtonText }}</button></p>
+    <div *ngIf="killed">
+        <h2 *ngIf="killer == 'Disney Princess'">This would be to horrible!!!</h2>
+        <p *ngIf="killer != 'Disney Princess'">You have been killed by {{ killer }}</p>
+        <img *ngIf="killer == 'Jason Vorhees'" src="http://www.factfiend.com/wp-content/uploads/2014/10/friday-the-13th-NY-through-the-window.jpg" width="300">
+        <img *ngIf="killer == 'Freddy Krueger'" src="https://hiddenremote.com/wp-content/blogs.dir/277/files/2013/09/freddy-new-awesome.jpg" width="300">
+        <img *ngIf="killer == 'Michael Myers'" src="http://i.dailymail.co.uk/i/pix/2013/01/25/article-0-17291475000005DC-944_634x404.jpg" width="300">
+        <img *ngIf="killer == 'Chucky'" src="https://images.moviepilot.com/images/c_limit,q_auto:good,w_600/image-3-killer-dolls-the-best-kills-of-chucky-and-tiffany-bfd0e210-f81d-4410-ae2c-537b09403093-jpeg-69449/killer-dolls-the-best-kills-of-chucky-and-tiffany.jpg" width="300">
+    </div>
 </div>
+<app-killer-list></app-killer-list>

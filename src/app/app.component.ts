@@ -8,7 +8,7 @@ export class AppComponent {
     killed = false;
     killButtonText = 'Kill me!';
     killer: any = 'Jason Vorhees';
-    title: any = 'Welcome to Camp Crystal Lake';
+    title: any = 'Welcome to Camp Crystal Lake aka "The Killer-App"';
 
     buttonClick() {
         if (this.killed === true) {
@@ -20,19 +20,7 @@ export class AppComponent {
         }
     }
 
-    freddyButtonClick(){
-        this.killer = 'Freddy Krueger';
-    }
-
-    jasonButtonClick(){
-        this.killer = 'Jason Vorhees';
-    }
-
-    michaelButtonClick(){
-        this.killer = 'Michael Myers';
-    }
-
-    chuckyButtonClick(){
-        this.killer = 'Chucky';
+    killerButtonClick(killername: string) {
+        this.killer = killername;
     }
 }
