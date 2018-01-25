@@ -1,0 +1,15 @@
+<div class="killAction">
+  <h2 class="killActionName" (click)="chooseKillAction(killAction.id)">
+  {{killAction.id}}. {{killAction.name}}</h2>
+  <h4>Description</h4>
+  <p class="killActionDescription">{{killAction.description}}</p>
+  <h4>Possible Killers:</h4>
+  <ul class="killActionKillers">
+    <li class="killActionKiller" *ngFor="let killer of killAction.possibleKillers">
+      {{killer.name}}
+      <ul>
+        <li>Weapon: {{killer.primaryWeapon}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>

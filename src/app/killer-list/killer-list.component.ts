@@ -44,4 +44,7 @@ export class KillerListComponent implements OnInit {
   ngOnInit() {
   }
 
+  KillActionChosen(id) {
+    console.log(id);
+  }
 }
