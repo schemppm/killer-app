@@ -11,13 +11,21 @@ export class KillerComponent implements OnInit {
   killed = false;
   killButtonText = 'Kill me!';
   killer: any = 'Jason Vorhees';
-  title: any = 'Welcome to Camp Crystal Lake aka "The Killer-App"';
-  killAction: any;
+  killAction: any = { name: 'Nothing' };
 
   constructor(private killActionService: KillActionService) {
     killActionService.activeKillAction$.subscribe((killAction) => {
-      console.log(killAction);
-      this.killAction = killAction;
+      let allowed = false;
+      killAction.possibleKillers.forEach(possibleKiller => {
+        if (possibleKiller.name === this.killer) {
+          allowed = true;
+        }
+      });
+      if(allowed) {
+        this.killAction = killAction;
+      } else {
+        alert(`${this.killer} cannot kill with ${killAction.name}`);
+      }
     });
   }
 
@@ -36,6 +44,7 @@ export class KillerComponent implements OnInit {
 
   killerButtonClick(killername: string) {
     this.killer = killername;
+    this.killAction = { name: `Nothing` };
   }
 
 }

@@ -1,12 +1,14 @@
 <div class="containerX">
-        <mat-toolbar color="primary">
-            <mat-toolbar-row>
-                <span>{{appkiller.title}}</span>
-            </mat-toolbar-row>
-        </mat-toolbar>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Killer-App</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <app-navigation></app-navigation>
     <div class="container" fxlayout="row" fxLayoutAlign="space-around">
+
         <div fxFlex="50%" style="margin: 15px;">
-            <app-killer #appkiller></app-killer>
+            <router-outlet></router-outlet>
         </div>
         <div fxFlex="50%" style="margin: 15px;">
             <app-killer-list></app-killer-list>

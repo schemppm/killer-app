@@ -1,3 +1,11 @@
 <div class="killActions">
-  <app-kill-action *ngFor="let killAction of killActions" [killAction]="killAction" (KillActionChosen)="KillActionChosen($event)"></app-kill-action>
+    <mat-tab-group>
+        <mat-tab *ngFor="let killAction of killActions" label="{{killAction.name}}">
+          <app-kill-action
+          [killAction]="killAction"
+          (KillActionChosen)="KillActionChosen($event)"
+          (KillActionToRemove)="KillActionToRemove($event)"
+          ></app-kill-action>
+        </mat-tab>
+    </mat-tab-group>
 </div>

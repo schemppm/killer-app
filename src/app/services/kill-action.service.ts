@@ -5,7 +5,7 @@ import { KillActionInterface } from '../interfaces/killAction.interface';
 @Injectable()
 export class KillActionService {
 
-  private activeKillActionSource = new Subject<object>();
+  private activeKillActionSource = new Subject<KillActionInterface>();
 
   constructor() { }
 

@@ -11,6 +11,7 @@ export class KillActionComponent implements OnInit {
 
   @Input() killAction: KillActionInterface;
   @Output() KillActionChosen = new EventEmitter<object>();
+  @Output() KillActionToRemove = new EventEmitter<object>();
   chosenKillAction = 1;
 
   constructor(private killActionService: KillActionService) { }
@@ -21,6 +22,10 @@ export class KillActionComponent implements OnInit {
   chooseKillAction(killAction) {
     this.KillActionChosen.emit(killAction.id);
     this.killActionService.activeKillAction(killAction);
+  }
+
+  deleteKillAction(killAction) {
+    this.KillActionToRemove.emit(killAction.id);
   }
 
 }

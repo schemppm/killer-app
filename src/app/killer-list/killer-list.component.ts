@@ -50,4 +50,13 @@ export class KillerListComponent implements OnInit {
   KillActionChosen(id) {
     console.log(id);
   }
+
+  KillActionToRemove(id) {
+    console.log(`delete ${id}`);
+    this.killActions.forEach((killAction, index) => {
+      if (killAction.id === id) {
+        this.killActions.splice(index, 1);
+      }
+    });
+  }
 }
