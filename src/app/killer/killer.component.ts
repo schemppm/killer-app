@@ -12,9 +12,14 @@ export class KillerComponent implements OnInit {
   killButtonText = 'Kill me!';
   killer: any = 'Jason Vorhees';
   killAction: any = { name: 'Nothing' };
+  killActionService: KillActionService;
 
-  constructor(private killActionService: KillActionService) {
-    killActionService.activeKillAction$.subscribe((killAction) => {
+  constructor(killActionService: KillActionService) {
+    this.killActionService = killActionService;
+  }
+
+  ngOnInit() {
+    this.killActionService.activeKillAction$.subscribe((killAction) => {
       let allowed = false;
       killAction.possibleKillers.forEach(possibleKiller => {
         if (possibleKiller.name === this.killer) {
@@ -27,9 +32,6 @@ export class KillerComponent implements OnInit {
         alert(`${this.killer} cannot kill with ${killAction.name}`);
       }
     });
-  }
-
-  ngOnInit() {
   }
 
   buttonClick() {
