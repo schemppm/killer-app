@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { KillActionInterface } from '../interfaces/killAction.interface';
+import { KillActionService } from '../services/kill-action.service';
 
 @Component({
   selector: 'app-kill-action',
@@ -12,13 +13,14 @@ export class KillActionComponent implements OnInit {
   @Output() KillActionChosen = new EventEmitter<object>();
   chosenKillAction = 1;
 
-  constructor() { }
+  constructor(private killActionService: KillActionService) { }
 
   ngOnInit() {
   }
 
-  chooseKillAction(id) {
-    this.KillActionChosen.emit(id);
+  chooseKillAction(killAction) {
+    this.KillActionChosen.emit(killAction.id);
+    this.killActionService.activeKillAction(killAction);
   }
 
 }

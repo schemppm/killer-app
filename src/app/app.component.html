@@ -1,8 +1,15 @@
-<div class="row">
-    <div class="col-md-6">
-        <app-killer></app-killer>
+<div class="container">
+    <div class="row" style="margin-bottom: 50px;">
+        <div class="col-md-12">
+            <h1>{{appkiller.title}}</h1>
+        </div>
     </div>
-    <div class="col-md-6">
-        <app-killer-list></app-killer-list>
+    <div class="row">
+        <div class="col-md-6">
+            <app-killer #appkiller></app-killer>
+        </div>
+        <div class="col-md-6">
+            <app-killer-list></app-killer-list>
+        </div>
     </div>
 </div>

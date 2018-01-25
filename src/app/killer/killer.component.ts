@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KillActionService } from '../services/kill-action.service';
 
 @Component({
   selector: 'app-killer',
@@ -11,8 +12,14 @@ export class KillerComponent implements OnInit {
   killButtonText = 'Kill me!';
   killer: any = 'Jason Vorhees';
   title: any = 'Welcome to Camp Crystal Lake aka "The Killer-App"';
+  killAction: any;
 
-  constructor() { }
+  constructor(private killActionService: KillActionService) {
+    killActionService.activeKillAction$.subscribe((killAction) => {
+      console.log(killAction);
+      this.killAction = killAction;
+    });
+  }
 
   ngOnInit() {
   }
