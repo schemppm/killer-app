@@ -1,4 +1,3 @@
 <div class="killActions">
-  <h2>Kill Actions:</h2>
   <app-kill-action *ngFor="let killAction of killActions" [killAction]="killAction" (KillActionChosen)="KillActionChosen($event)"></app-kill-action>
 </div>

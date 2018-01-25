@@ -1,15 +1,15 @@
-<div class="killerApp">
+<mat-card>
   <img src="http://www.summercampculture.com/wp-content/uploads/2013/10/campcrystallakeengagementphotos.jpg" width="200">
   <h3>Choose your favourite killer and let him kill you :)</h3>
   <p>
-      <button class="freddyButton" (click)="killerButtonClick('Freddy Krueger')">To Freddy</button>
-      <button (click)="killerButtonClick('Jason Vorhees')">To Jason</button>
-      <button (click)="killerButtonClick('Michael Myers')">To Michael</button>
-      <button (click)="killerButtonClick('Chucky')">To Chucky</button>
-      <button (click)="killerButtonClick('Disney Princess')">To Disney Princess</button>
+      <button mat-raised-button class="freddyButton" (click)="killerButtonClick('Freddy Krueger')">To Freddy</button>
+      <button mat-raised-button (click)="killerButtonClick('Jason Vorhees')">To Jason</button>
+      <button mat-raised-button (click)="killerButtonClick('Michael Myers')">To Michael</button>
+      <button mat-raised-button (click)="killerButtonClick('Chucky')">To Chucky</button>
+      <button mat-raised-button (click)="killerButtonClick('Disney Princess')">To Disney Princess</button>
   </p>
   <p class="currentKillerText">Your current killer is: {{ killer }}</p>
-  <p><button (click)="buttonClick()">{{ killButtonText }}</button></p>
+  <p><button mat-raised-button  (click)="buttonClick()">{{ killButtonText }}</button></p>
   <div *ngIf="killed">
       <h2 *ngIf="killer == 'Disney Princess'">This would be to horrible!!!</h2>
       <p *ngIf="killer != 'Disney Princess'">You have been killed by {{ killer }}</p>
@@ -18,4 +18,4 @@
       <img *ngIf="killer == 'Michael Myers'" src="http://i.dailymail.co.uk/i/pix/2013/01/25/article-0-17291475000005DC-944_634x404.jpg" width="300">
       <img *ngIf="killer == 'Chucky'" src="https://images.moviepilot.com/images/c_limit,q_auto:good,w_600/image-3-killer-dolls-the-best-kills-of-chucky-and-tiffany-bfd0e210-f81d-4410-ae2c-537b09403093-jpeg-69449/killer-dolls-the-best-kills-of-chucky-and-tiffany.jpg" width="300">
   </div>
-</div>
+</mat-card>
