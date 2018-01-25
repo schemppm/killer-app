@@ -19,7 +19,7 @@ export class KillerListComponent implements OnInit {
       ]
     },
     {
-      'id': 1,
+      'id': 2,
       'name': 'The Bed trick',
       'description': 'When your victim is on a bed, hide under it and then kill him from there with a random weapon',
       'possibleKillers': [
@@ -30,7 +30,7 @@ export class KillerListComponent implements OnInit {
       ]
     },
     {
-      'id': 1,
+      'id': 3,
       'name': 'The Song to Death',
       'description': 'Sing a f***ing Disney Song... All night long...',
       'possibleKillers': [
